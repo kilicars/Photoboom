@@ -1,0 +1,26 @@
+﻿@model Photoboom.Models.Photo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <h2 class="font-weight-bold">@Html.DisplayFor(model => model.Title)</h2>
+        @{
+            if (!string.IsNullOrEmpty(Model.TagString))
+            {
+                <p>Tags: @Html.DisplayFor(model => model.TagString)</p>
+            }
+        }
+        <img src="@Model.ImageUrl" alt="Image" @*style="width: 150px; height: 220px;"*@ />
+        <br />
+        <br />
+        <br />
+        <a asp-action="Delete" asp-route-id="@Model.PhotoId">Delete Photo</a>
+        <br />
+        <br />
+        <a asp-action="Index">Back to My Photos</a>
+    </div>
+</div>

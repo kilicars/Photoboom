@@ -1,0 +1,27 @@
+﻿@model Photoboom.Models.Photo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3 class="text-center">Are you sure you want to delete this photo?</h3>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-12 text-center">
+        <p>@Html.DisplayFor(model => model.Title)</p>
+        <img src="@Model.ImageUrl" alt="Image" @*style="width: 150px; height: 220px;"*@ />
+        <br />
+        <br />
+        <br />
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="PhotoId" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            <br />
+            <br />
+            <a asp-action="Index">Back to My Photos</a>
+        </form>
+    </div>
+
+</div>
